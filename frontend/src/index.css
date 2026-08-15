@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-canvas text-ink-text font-body antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink;
+  }
+  ::selection {
+    @apply bg-ledger/20;
+  }
+  *:focus-visible {
+    outline: 2px solid #1f7a5c;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-card shadow-card border border-black/5;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-ledger text-white hover:bg-ledger-dark;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-ink border border-black/10 hover:bg-black/5;
+  }
+  .btn-danger {
+    @apply btn bg-danger text-white hover:bg-danger/90;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-ink hover:bg-black/5;
+  }
+
+  .input {
+    @apply w-full rounded-md border border-black/10 bg-white px-3.5 py-2.5 text-sm text-ink-text placeholder:text-slate-muted focus:border-ledger focus:ring-1 focus:ring-ledger outline-none transition-colors;
+  }
+
+  .label {
+    @apply block text-xs font-semibold uppercase tracking-wide text-slate-muted mb-1.5;
+  }
+
+  .table-shell {
+    @apply w-full text-sm;
+  }
+  .table-shell thead th {
+    @apply text-left text-xs font-semibold uppercase tracking-wide text-slate-muted px-4 py-3 border-b border-black/5;
+  }
+  .table-shell tbody td {
+    @apply px-4 py-3.5 border-b border-black/5 align-middle;
+  }
+  .table-shell tbody tr:hover {
+    @apply bg-black/[0.015];
+  }
+
+  .money {
+    @apply font-mono tabular-nums;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+  .badge-success {
+    @apply badge bg-ledger-light text-ledger-dark;
+  }
+  .badge-danger {
+    @apply badge bg-danger-light text-danger;
+  }
+  .badge-warning {
+    @apply badge bg-amber-light text-amber;
+  }
+}
