@@ -3,7 +3,7 @@ import axios from "axios";
 // Central axios instance. All API URLs in this file must match the
 // backend routes mounted in backend/server.js.
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api",
+  baseURL: import.meta.env.VITE_API_BASE_URL || "https://bank-transcation-system-backend.onrender.com/api",
   headers: { "Content-Type": "application/json" },
 });
 
